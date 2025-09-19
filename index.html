@@ -3,27 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Library - Redirecting...</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: #232526;
-            color: white;
-        }
-        .loading {
-            font-size: 1.2em;
-            color: #ffb347;
-        }
-    </style>
+    <title>Cinema</title>
+    <link rel="stylesheet" href="/movie-library/style.css">
 </head>
 <body>
-    <h1>Movie Library</h1>
-    <p class="loading">Redirecting to Movie Library...</p>
-    <script>
-        // Automatically redirect to the movie-library folder
-        window.location.href = './movie-library/index.html';
-    </script>
+
+    <h1>Cinema of the Future</h1>
+    <div id="movie-list"></div>
+    <h2>Add a new movie</h2>
+
+    <form id="movie-form">
+        <input type="text" name="title" id="title" placeholder="Title" required>
+        <input type="text" name="director" id="director" placeholder="Director" required>
+        <input type="text" name="genre" id="genre" placeholder="Genre" required>
+        <input type="text" name="year" id="year" placeholder="Year" required>
+        <button type="submit">Add Movie</button>
+    </form>
+
+    <h2>Filter & Sort Movies</h2>
+    <div class="filter-controls">
+        <div>
+            <label for="genre-filter">Filter by Genre:</label>
+            <select id="genre-filter">
+                <option value="">All Genres</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Drama">Drama</option>
+                <option value="Crime">Crime</option>
+                <option value="Action">Action</option>
+                <option value="Romance">Romance</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Adventure">Adventure</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="year-sort">Sort by Year:</label>
+            <select id="year-sort">
+                <option value="">No Sorting</option>
+                <option value="asc">Year: Ascending (Old to New)</option>
+                <option value="desc">Year: Descending (New to Old)</option>
+            </select>
+        </div>
+
+        <button id="clear-filters">Clear All Filters</button>
+    </div>
+
+    <script src="/movie-library/app.js"></script>
 </body>
 </html>

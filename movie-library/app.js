@@ -3,7 +3,7 @@ let cinemaData = {
 };
 
 function loadingCinemaData(){
-    fetch('movie.json')
+    fetch('/movie-library/movie.json')
     .then(response => response.json())
     .then(data => {
         cinemaData.movies = data;
